@@ -1,0 +1,73 @@
+[gd_scene load_steps=7 format=3 uid="uid://h2vghdqb7c55"]
+
+[ext_resource type="Script" uid="uid://neot4xd8o5e7" path="res://path_2d.gd" id="1_0or2f"]
+[ext_resource type="Texture2D" uid="uid://d300jlah5s80k" path="res://icon.svg" id="2_rfjfv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0or2f"]
+size = Vector2(127.02187, 128.02184)
+
+[sub_resource type="Animation" id="Animation_4oy7x"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_0266r"]
+resource_name = "move"
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_efop3"]
+_data = {
+&"RESET": SubResource("Animation_4oy7x"),
+&"move": SubResource("Animation_0266r")
+}
+
+[node name="Path2D" type="Path2D"]
+script = ExtResource("1_0or2f")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+position = Vector2(6.316029, 0.93408984)
+rotation = -0.009008765
+progress = 7.318984
+rotates = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="PathFollow2D"]
+remote_path = NodePath("../../AnimatableBody2D")
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+position = Vector2(6.316029, 0.93408984)
+rotation = -0.009008765
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
+texture = ExtResource("2_rfjfv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
+position = Vector2(0.17886639, 0.06756288)
+shape = SubResource("RectangleShape2D_0or2f")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_efop3")
+}

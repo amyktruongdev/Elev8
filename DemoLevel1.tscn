@@ -1,0 +1,105 @@
+[gd_scene load_steps=5 format=3 uid="uid://cxcvyqjm3dea2"]
+
+[ext_resource type="PackedScene" uid="uid://bjb0cjtep4sye" path="res://Tile.tscn" id="1_5xdl2"]
+[ext_resource type="PackedScene" uid="uid://cmhd8xn2hdka0" path="res://Player.tscn" id="2_5xdl2"]
+[ext_resource type="PackedScene" uid="uid://h2vghdqb7c55" path="res://movingPlatform.tscn" id="3_qttey"]
+
+[sub_resource type="Curve2D" id="Curve2D_qttey"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -1, 0, 0, 0, 0, 0, -3, 166)
+}
+point_count = 2
+
+[node name="DemoLevel1" type="Node2D"]
+
+[node name="Tile" parent="." instance=ExtResource("1_5xdl2")]
+position = Vector2(65, 701)
+
+[node name="Tile2" parent="." instance=ExtResource("1_5xdl2")]
+position = Vector2(196, 701)
+
+[node name="Tile3" parent="." instance=ExtResource("1_5xdl2")]
+position = Vector2(327, 701)
+
+[node name="Tile4" parent="." instance=ExtResource("1_5xdl2")]
+position = Vector2(457, 701)
+
+[node name="Tile5" parent="." instance=ExtResource("1_5xdl2")]
+position = Vector2(587, 701)
+
+[node name="Tile6" parent="." instance=ExtResource("1_5xdl2")]
+position = Vector2(717, 701)
+
+[node name="Tile7" parent="." instance=ExtResource("1_5xdl2")]
+position = Vector2(846, 701)
+
+[node name="Tile8" parent="." instance=ExtResource("1_5xdl2")]
+position = Vector2(977, 701)
+
+[node name="Tile20" parent="." instance=ExtResource("1_5xdl2")]
+position = Vector2(1074, 572)
+
+[node name="Tile26" parent="." instance=ExtResource("1_5xdl2")]
+position = Vector2(1074, 160)
+
+[node name="Tile21" parent="." instance=ExtResource("1_5xdl2")]
+position = Vector2(655, 322)
+
+[node name="Tile22" parent="." instance=ExtResource("1_5xdl2")]
+position = Vector2(526, 322)
+
+[node name="Tile23" parent="." instance=ExtResource("1_5xdl2")]
+position = Vector2(397, 322)
+
+[node name="Tile9" parent="." instance=ExtResource("1_5xdl2")]
+position = Vector2(1109, 701)
+
+[node name="Tile10" parent="." instance=ExtResource("1_5xdl2")]
+position = Vector2(1203, 572)
+
+[node name="Tile11" parent="." instance=ExtResource("1_5xdl2")]
+position = Vector2(1203, 443)
+
+[node name="Tile12" parent="." instance=ExtResource("1_5xdl2")]
+position = Vector2(1203, 314)
+
+[node name="Tile13" parent="." instance=ExtResource("1_5xdl2")]
+position = Vector2(1203, 185)
+
+[node name="Tile14" parent="." instance=ExtResource("1_5xdl2")]
+position = Vector2(1203, 56)
+
+[node name="Tile24" parent="." instance=ExtResource("1_5xdl2")]
+position = Vector2(1203, -73)
+
+[node name="Tile28" parent="." instance=ExtResource("1_5xdl2")]
+position = Vector2(1203, -202)
+
+[node name="Tile15" parent="." instance=ExtResource("1_5xdl2")]
+position = Vector2(-50, 572)
+
+[node name="Tile16" parent="." instance=ExtResource("1_5xdl2")]
+position = Vector2(-50, 443)
+
+[node name="Tile17" parent="." instance=ExtResource("1_5xdl2")]
+position = Vector2(-50, 314)
+
+[node name="Tile18" parent="." instance=ExtResource("1_5xdl2")]
+position = Vector2(-50, 185)
+
+[node name="Tile19" parent="." instance=ExtResource("1_5xdl2")]
+position = Vector2(-50, 56)
+
+[node name="Tile25" parent="." instance=ExtResource("1_5xdl2")]
+position = Vector2(-50, -73)
+
+[node name="Tile29" parent="." instance=ExtResource("1_5xdl2")]
+position = Vector2(-50, -202)
+
+[node name="Player" parent="." instance=ExtResource("2_5xdl2")]
+position = Vector2(166, 509)
+
+[node name="Path2D" parent="." instance=ExtResource("3_qttey")]
+position = Vector2(88, 135)
+curve = SubResource("Curve2D_qttey")
+loop = false
