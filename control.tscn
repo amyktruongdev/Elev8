@@ -1,0 +1,206 @@
+[gd_scene load_steps=8 format=3 uid="uid://cwb7cn0jkgsg6"]
+
+[ext_resource type="Script" uid="uid://c1a2p2dc84qc7" path="res://level_editor_ui.gd" id="1_0fbet"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uchyk"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.7058824, 0.89411765, 0.9764706, 1)
+border_blend = true
+
+[sub_resource type="Theme" id="Theme_uchyk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_62e2m"]
+bg_color = Color(0.7058824, 0.89411765, 0.9764706, 1)
+
+[sub_resource type="Theme" id="Theme_0fbet"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qtu10"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0fbet"]
+bg_color = Color(0.7058824, 0.89411765, 0.9764706, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_stretch_ratio = 9.75
+script = ExtResource("1_0fbet")
+
+[node name="rootframe" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.001
+offset_right = 2.0
+offset_bottom = 0.27996826
+theme_override_styles/panel = SubResource("StyleBoxFlat_uchyk")
+
+[node name="MarginContainer" type="MarginContainer" parent="rootframe"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.001
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.282
+offset_top = 2.0
+offset_right = 3.0
+offset_bottom = 1.0
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="mainVbox" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 5.0
+offset_right = 1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_uchyk")
+theme_override_constants/separation = 76
+
+[node name="topbar" type="PanelContainer" parent="mainVbox"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_62e2m")
+
+[node name="topbarhbox" type="HBoxContainer" parent="mainVbox/topbar"]
+layout_mode = 2
+theme_override_constants/separation = 148
+
+[node name="backbtn" type="Button" parent="mainVbox/topbar/topbarhbox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+toggle_mode = true
+text = "↰"
+flat = true
+
+[node name="sprite" type="Button" parent="mainVbox/topbar/topbarhbox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.021434713, 0.021434603, 0.02143463, 1)
+text = "Sprite"
+flat = true
+
+[node name="blocks" type="Button" parent="mainVbox/topbar/topbarhbox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.014275268, 0.014275197, 0.014275214, 1)
+text = "Blocks"
+flat = true
+
+[node name="platforms" type="Button" parent="mainVbox/topbar/topbarhbox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.003519184, 0.00351916, 0.0035191686, 1)
+text = "Platforms"
+flat = true
+
+[node name="items" type="Button" parent="mainVbox/topbar/topbarhbox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.00069390074, 0.0006938965, 0.0006938975, 1)
+text = "Items"
+flat = true
+
+[node name="enemies" type="Button" parent="mainVbox/topbar/topbarhbox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.0056611756, 0.0056611407, 0.005661149, 1)
+text = "Enemy"
+flat = true
+
+[node name="save" type="Button" parent="mainVbox/topbar/topbarhbox"]
+layout_mode = 2
+theme = SubResource("Theme_0fbet")
+theme_override_colors/font_color = Color(0.042044476, 0.1135431, 1.0798126, 1)
+theme_override_font_sizes/font_size = 20
+text = "Save"
+flat = true
+
+[node name="selectorbar" type="PanelContainer" parent="mainVbox"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qtu10")
+
+[node name="selectorScroll" type="ScrollContainer" parent="mainVbox/selectorbar"]
+layout_mode = 2
+
+[node name="selectList" type="HBoxContainer" parent="mainVbox/selectorbar/selectorScroll"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="HSplitContainer" type="HSplitContainer" parent="mainVbox"]
+layout_mode = 2
+
+[node name="toolpanel" type="VBoxContainer" parent="mainVbox/HSplitContainer"]
+layout_mode = 2
+theme_override_constants/separation = 61
+
+[node name="imagebtn" type="Button" parent="mainVbox/HSplitContainer/toolpanel"]
+layout_mode = 2
+text = "🖼 "
+flat = true
+
+[node name="musicbtn" type="Button" parent="mainVbox/HSplitContainer/toolpanel"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "♪"
+flat = true
+
+[node name="playbtn" type="Button" parent="mainVbox/HSplitContainer/toolpanel"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "▶"
+flat = true
+
+[node name="finishbtn" type="Button" parent="mainVbox/HSplitContainer/toolpanel"]
+layout_mode = 2
+text = "🏁"
+flat = true
+
+[node name="workspace" type="VBoxContainer" parent="mainVbox/HSplitContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="bottombar" type="PanelContainer" parent="mainVbox"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0fbet")
+
+[node name="bottomhbox" type="HBoxContainer" parent="mainVbox/bottombar"]
+layout_mode = 2
+theme_override_constants/separation = 185
+alignment = 1
+
+[node name="undo" type="Button" parent="mainVbox/bottombar/bottomhbox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.0056611756, 0.0056611407, 0.005661149, 1)
+text = "← Undo"
+flat = true
+
+[node name="try it" type="Button" parent="mainVbox/bottombar/bottomhbox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "▲ Try It!"
+flat = true
+
+[node name="help" type="Button" parent="mainVbox/bottombar/bottomhbox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.000113828486, 0.000113827875, 0.000113828006, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+text = "Help?"
+flat = true
+
+[node name="clear all" type="Button" parent="mainVbox/bottombar/bottomhbox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.06053055, 0.060530275, 0.060530335, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+text = "↓ Clear All"
+flat = true
