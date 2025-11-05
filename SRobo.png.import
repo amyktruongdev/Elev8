@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6d6sf6mw6bq2"
-path="res://.godot/imported/Sun.png-a95f9a833c926cd83f1045ceaeba3ab7.ctex"
+uid="uid://rjo6ur2xb2dl"
+path="res://.godot/imported/SRobo.png-90050762be6bad6dd7c9f2f4bc6f725a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sun.png"
-dest_files=["res://.godot/imported/Sun.png-a95f9a833c926cd83f1045ceaeba3ab7.ctex"]
+source_file="res://SRobo.png"
+dest_files=["res://.godot/imported/SRobo.png-90050762be6bad6dd7c9f2f4bc6f725a.ctex"]
 
 [params]
 

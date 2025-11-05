@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6d6sf6mw6bq2"
-path="res://.godot/imported/Sun.png-a95f9a833c926cd83f1045ceaeba3ab7.ctex"
+uid="uid://ckce0f402g071"
+path="res://.godot/imported/BrownTile.png-7607a0b23406360d7dbf15a83cf1a648.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sun.png"
-dest_files=["res://.godot/imported/Sun.png-a95f9a833c926cd83f1045ceaeba3ab7.ctex"]
+source_file="res://BrownTile.png"
+dest_files=["res://.godot/imported/BrownTile.png-7607a0b23406360d7dbf15a83cf1a648.ctex"]
 
 [params]
 

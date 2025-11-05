@@ -1,0 +1,72 @@
+[gd_scene load_steps=2 format=3 uid="uid://bsalnc7qo0ssa"]
+
+[ext_resource type="Script" uid="uid://bbnrot2wc43gv" path="res://edit_menu.gd" id="1_s2nd4"]
+
+[node name="EditMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_s2nd4")
+
+[node name="Sprites" type="Button" parent="."]
+layout_mode = 0
+offset_right = 185.0
+offset_bottom = 77.0
+text = "Sprites
+"
+
+[node name="Save" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 368.0
+offset_right = 92.0
+offset_bottom = 445.0
+text = "Save
+"
+
+[node name="Blocks" type="Button" parent="."]
+layout_mode = 0
+offset_left = 227.0
+offset_top = 1.0
+offset_right = 412.0
+offset_bottom = 78.0
+text = "Blocks
+"
+
+[node name="Platforms" type="Button" parent="."]
+layout_mode = 0
+offset_left = 460.0
+offset_top = 1.0
+offset_right = 645.0
+offset_bottom = 78.0
+text = "Platforms
+"
+
+[node name="Items" type="Button" parent="."]
+layout_mode = 0
+offset_left = 712.0
+offset_right = 897.0
+offset_bottom = 77.0
+text = "Items"
+
+[node name="Enemies" type="Button" parent="."]
+layout_mode = 0
+offset_left = 965.0
+offset_top = 1.0
+offset_right = 1150.0
+offset_bottom = 78.0
+text = "Enemies"
+
+[node name="PopupMenu" type="PopupMenu" parent="."]
+oversampling_override = 1.0
+visible = true
+
+[connection signal="pressed" from="Sprites" to="." method="_on_sprites_pressed"]
+[connection signal="pressed" from="Save" to="." method="_on_sprites_pressed"]
+[connection signal="pressed" from="Blocks" to="." method="_on_blocks_pressed"]
+[connection signal="pressed" from="Platforms" to="." method="_on_platforms_pressed"]
+[connection signal="pressed" from="Items" to="." method="_on_items_pressed"]
+[connection signal="pressed" from="Enemies" to="." method="_on_enemies_pressed"]

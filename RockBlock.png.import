@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6d6sf6mw6bq2"
-path="res://.godot/imported/Sun.png-a95f9a833c926cd83f1045ceaeba3ab7.ctex"
+uid="uid://dafyilvnuyk0q"
+path="res://.godot/imported/RockBlock.png-1c5d2e91e028dc6a6cd34d33a63df532.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sun.png"
-dest_files=["res://.godot/imported/Sun.png-a95f9a833c926cd83f1045ceaeba3ab7.ctex"]
+source_file="res://RockBlock.png"
+dest_files=["res://.godot/imported/RockBlock.png-1c5d2e91e028dc6a6cd34d33a63df532.ctex"]
 
 [params]
 

@@ -2,7 +2,9 @@ extends CharacterBody2D
 
 
 const SPEED = 300.0
-const JUMP_VELOCITY = -700.0
+const JUMP_VELOCITY = -550.0
+
+@onready var sprite_2d = $Sprite2D
 
 
 func _physics_process(delta: float) -> void:
@@ -20,5 +22,8 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+	
+	if direction != 0:
+		sprite_2d.flip_h = direction > 0
 
 	move_and_slide()

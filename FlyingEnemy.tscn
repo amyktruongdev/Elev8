@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://0gvnchd0kjko"]
+
+[ext_resource type="Texture2D" uid="uid://d7mi1c1q0wql" path="res://Flyer.png" id="1_m5spn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xebys"]
+size = Vector2(40, 40)
+
+[node name="FlyingEnemy" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_m5spn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_xebys")

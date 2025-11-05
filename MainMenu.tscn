@@ -1,22 +1,19 @@
-[gd_scene load_steps=12 format=3 uid="uid://3o60df1wq68c"]
+[gd_scene load_steps=11 format=3 uid="uid://3o60df1wq68c"]
 
-[ext_resource type="AudioStream" uid="uid://c27lpv17hab4e" path="res://vampires_piano.mp3" id="1_06t4h"]
-[ext_resource type="Texture2D" uid="uid://b473d8p2jud13" path="res://Sky.png" id="1_7vrkn"]
-[ext_resource type="Script" uid="uid://dg4q3cipt27xy" path="res://main_menu.gd" id="1_glbon"]
-[ext_resource type="Texture2D" uid="uid://3iaa0a0wjsvs" path="res://Grass.png" id="3_jix8l"]
-[ext_resource type="Texture2D" uid="uid://bmfrj42hmsgmb" path="res://Sun.png" id="4_glbon"]
-[ext_resource type="Texture2D" uid="uid://do1qbal33kpcu" path="res://Robo.png" id="6_nlkkf"]
-[ext_resource type="Texture2D" uid="uid://ch5v15j4b573b" path="res://root_guy.png" id="7_qe12f"]
-[ext_resource type="Texture2D" uid="uid://ssxmuu1bw1im" path="res://bear.png" id="8_8qtwp"]
+[ext_resource type="Script" uid="uid://dg4q3cipt27xy" path="res://main_menu.gd" id="1_e2xy7"]
+[ext_resource type="Texture2D" uid="uid://b473d8p2jud13" path="res://Sky.png" id="2_fimr5"]
+[ext_resource type="AudioStream" uid="uid://c27lpv17hab4e" path="res://vampires_piano.mp3" id="3_u7cqb"]
+[ext_resource type="Texture2D" uid="uid://3iaa0a0wjsvs" path="res://Grass.png" id="4_afec1"]
+[ext_resource type="Texture2D" uid="uid://do1qbal33kpcu" path="res://Robo.png" id="5_31qfy"]
+[ext_resource type="Texture2D" uid="uid://ch5v15j4b573b" path="res://root_guy.png" id="6_qie43"]
+[ext_resource type="Texture2D" uid="uid://ssxmuu1bw1im" path="res://bear.png" id="7_61cf8"]
+[ext_resource type="Texture2D" uid="uid://b6d6sf6mw6bq2" path="res://Sun.png" id="8_rnncn"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fu7sn"]
-texture = ExtResource("1_7vrkn")
+texture = ExtResource("2_fimr5")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nlkkf"]
-texture = ExtResource("3_jix8l")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qe12f"]
-texture = ExtResource("4_glbon")
+texture = ExtResource("4_afec1")
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -25,7 +22,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_glbon")
+script = ExtResource("1_e2xy7")
 
 [node name="Sky" type="Panel" parent="."]
 layout_mode = 1
@@ -79,7 +76,7 @@ theme_override_font_sizes/font_size = 48
 text = "ELEV8"
 
 [node name="BGMusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("1_06t4h")
+stream = ExtResource("3_u7cqb")
 autoplay = true
 
 [node name="Grass" type="Panel" parent="."]
@@ -91,18 +88,6 @@ offset_top = -116.0
 offset_right = 1152.0
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxTexture_nlkkf")
-
-[node name="Sun" type="Panel" parent="."]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -283.0
-offset_top = 71.0
-offset_right = -198.0
-offset_bottom = 161.0
-grow_horizontal = 0
-theme_override_styles/panel = SubResource("StyleBoxTexture_qe12f")
 
 [node name="Robo" type="TextureRect" parent="."]
 layout_mode = 1
@@ -117,22 +102,30 @@ offset_right = 48.0
 offset_bottom = -116.0
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("6_nlkkf")
+texture = ExtResource("5_31qfy")
 
 [node name="RootGuy" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 320.0
+offset_left = 299.0
 offset_top = 439.0
-offset_right = 416.0
+offset_right = 395.0
 offset_bottom = 535.0
-texture = ExtResource("7_qe12f")
+texture = ExtResource("6_qie43")
 
 [node name="bear" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 771.0
+offset_left = 761.0
 offset_top = 406.0
-offset_right = 896.0
+offset_right = 886.0
 offset_bottom = 531.0
-texture = ExtResource("8_8qtwp")
+texture = ExtResource("7_61cf8")
+
+[node name="Sun" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 877.0
+offset_top = 41.0
+offset_right = 1037.0
+offset_bottom = 201.0
+texture = ExtResource("8_rnncn")
 
 [connection signal="pressed" from="VBoxContainer/Demo" to="." method="_on_demo_pressed"]

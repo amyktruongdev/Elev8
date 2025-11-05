@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://df6ms0l3fnfc6"]
+
+[ext_resource type="Texture2D" uid="uid://c3xymrn2faag2" path="res://Water.png" id="1_q4b63"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tdsmd"]
+size = Vector2(86, 45)
+
+[node name="WaterTile" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_q4b63")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_tdsmd")

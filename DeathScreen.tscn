@@ -1,0 +1,79 @@
+[gd_scene load_steps=5 format=3 uid="uid://b1uvu4vtwfvyc"]
+
+[ext_resource type="Texture2D" uid="uid://dhntjadm0r8k7" path="res://Death.png" id="1_58ct5"]
+[ext_resource type="Script" uid="uid://c8msr2wy6kvo1" path="res://death_screen.gd" id="1_80igo"]
+[ext_resource type="AudioStream" uid="uid://btb7pdaivovb0" path="res://CrEEP.mp3" id="3_gircr"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_80igo"]
+texture = ExtResource("1_58ct5")
+
+[node name="DeathScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_80igo")
+
+[node name="Death" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_80igo")
+
+[node name="Retry" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -54.0
+offset_top = -26.5
+offset_right = 54.0
+offset_bottom = 24.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Retry"
+
+[node name="MainMenu" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -54.0
+offset_top = 34.0
+offset_right = 54.0
+offset_bottom = 85.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Main Menu"
+
+[node name="DeathMessage" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -107.0
+offset_top = -72.5
+offset_right = 107.0
+offset_bottom = -33.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 28
+text = "Oops! You Died!"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_gircr")
+autoplay = true
+
+[connection signal="pressed" from="Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="MainMenu" to="." method="_on_main_menu_pressed"]
