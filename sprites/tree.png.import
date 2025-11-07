@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgyn55w7qsny0"
-path="res://.godot/imported/Robo.png-53a98dd08d81b806e934aeef6a7efd70.ctex"
+uid="uid://cngmvn0xa4n13"
+path="res://.godot/imported/tree.png-f6c9ce7c15c3646c3c37a737953f3b49.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Robo.png"
-dest_files=["res://.godot/imported/Robo.png-53a98dd08d81b806e934aeef6a7efd70.ctex"]
+source_file="res://sprites/tree.png"
+dest_files=["res://.godot/imported/tree.png-f6c9ce7c15c3646c3c37a737953f3b49.ctex"]
 
 [params]
 

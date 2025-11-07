@@ -1,13 +1,13 @@
 [gd_scene load_steps=11 format=3 uid="uid://3o60df1wq68c"]
 
 [ext_resource type="Script" uid="uid://dg4q3cipt27xy" path="res://main_menu.gd" id="1_e2xy7"]
-[ext_resource type="Texture2D" uid="uid://b473d8p2jud13" path="res://Sky.png" id="2_fimr5"]
+[ext_resource type="Texture2D" uid="uid://b473d8p2jud13" path="res://BgImages/Sky.png" id="2_fimr5"]
 [ext_resource type="AudioStream" uid="uid://c27lpv17hab4e" path="res://vampires_piano.mp3" id="3_u7cqb"]
-[ext_resource type="Texture2D" uid="uid://3iaa0a0wjsvs" path="res://Grass.png" id="4_afec1"]
+[ext_resource type="Texture2D" uid="uid://3iaa0a0wjsvs" path="res://BgImages/Grass.png" id="4_afec1"]
 [ext_resource type="Texture2D" uid="uid://do1qbal33kpcu" path="res://Robo.png" id="5_31qfy"]
 [ext_resource type="Texture2D" uid="uid://ch5v15j4b573b" path="res://root_guy.png" id="6_qie43"]
 [ext_resource type="Texture2D" uid="uid://ssxmuu1bw1im" path="res://bear.png" id="7_61cf8"]
-[ext_resource type="Texture2D" uid="uid://b6d6sf6mw6bq2" path="res://Sun.png" id="8_rnncn"]
+[ext_resource type="Texture2D" uid="uid://b6d6sf6mw6bq2" path="res://BgImages/Sun.png" id="8_rnncn"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fu7sn"]
 texture = ExtResource("2_fimr5")
