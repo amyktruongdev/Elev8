@@ -1,15 +1,18 @@
 extends Control
 
+@onready var load_button: Button = $VBoxContainer/Load
+const LEVEL_SELECTOR_SCENE: String = "res://LevelSelector.tscn"
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	pass
-
+	load_button.pressed.connect(_on_load_pressed)
 
 func _on_demo_pressed() -> void:
 	get_tree().change_scene_to_file("res://DemoLevel1.tscn")
+
+func _on_load_pressed() -> void:
+	print("🎮 Opening Level Selector...")
+	var level_selector_scene: PackedScene = load(LEVEL_SELECTOR_SCENE)
+	if level_selector_scene == null:
+		print("⚠ Could not load LevelSelector scene!")
+		return
+	get_tree().change_scene_to_packed(level_selector_scene)

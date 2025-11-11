@@ -204,6 +204,8 @@ flat = true
 [node name="workspace" type="VBoxContainer" parent="mainVbox/HSplitContainer"]
 layout_mode = 2
 
+[node name="SpriteLayer" type="Node2D" parent="mainVbox/HSplitContainer/workspace"]
+
 [node name="bottombar" type="PanelContainer" parent="mainVbox"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_0fbet")
@@ -219,6 +221,13 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0.0056611756, 0.0056611407, 0.005661149, 1)
 theme_override_font_sizes/font_size = 23
 text = "← Undo"
+flat = true
+
+[node name="load" type="Button" parent="mainVbox/bottombar/bottomhbox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.0056611756, 0.0056611407, 0.005661149, 1)
+theme_override_font_sizes/font_size = 23
+text = "Load Test"
 flat = true
 
 [node name="try it" type="Button" parent="mainVbox/bottombar/bottomhbox"]
@@ -247,3 +256,6 @@ flat = true
 [node name="imagedialog" type="FileDialog" parent="."]
 
 [node name="musicdialog" type="FileDialog" parent="."]
+
+[connection signal="pressed" from="mainVbox/topbar/topbarhbox/save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="mainVbox/bottombar/bottomhbox/load" to="." method="_on_load_pressed"]

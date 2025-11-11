@@ -62,6 +62,7 @@ var toast_timer: Timer
 # 3. NODES (WITH mainVbox)
 # =========================================================
 # topbar
+@export var SAVE_PATH: String = "user://saved_level.json"
 @onready var sprite_btn     = $mainVbox/topbar/topbarhbox/sprite
 @onready var blocks_btn     = $mainVbox/topbar/topbarhbox/blocks
 @onready var platforms_btn  = $mainVbox/topbar/topbarhbox/platforms
@@ -92,6 +93,11 @@ var toast_timer: Timer
 @onready var image_dialog   = $imagedialog
 @onready var music_dialog   = $musicdialog
 #@onready var color_picker   = $ColorPicker
+
+@onready var save_btn = get_node_or_null("mainVbox/bottombar/bottomhbox/save")
+@onready var load_btn = get_node_or_null("mainVbox/bottombar/bottomhbox/load")
+@onready var back_btn = $mainVbox/topbar/topbarhbox/backbtn
+@onready var sprite_layer: Node2D = $mainVbox/HSplitContainer/workspace/SpriteLayer
 
 # we’ll grab these in _ready()
 var image_upload_btn: TextureButton
@@ -148,6 +154,7 @@ func _ready() -> void:
 	music_btn.pressed.connect(_on_music_tool_pressed)
 	redflag_btn.pressed.connect(_on_red_flag_pressed)
 	finish_btn.pressed.connect(_on_goal_flag_pressed)
+	back_btn.pressed.connect(_on_back_pressed)
 
 	# bottom bar
 	if undo_btn:
@@ -195,6 +202,17 @@ func _ready() -> void:
 	# show first tab
 	_on_tab_pressed("sprite", sprite_btn)
 
+	# ✅ Add this here — load the save path from global state
+	if GlobalState.save_path != "":
+		SAVE_PATH = GlobalState.save_path
+	else:
+		SAVE_PATH = "user://saved_level.json"
+
+	print("💾 Active SAVE_PATH on editor open:", SAVE_PATH)
+
+	# finally, connect save button
+	if save_btn:
+		save_btn.pressed.connect(_on_save_pressed)
 
 # =========================================================
 # TOP TABS
@@ -418,9 +436,131 @@ func _spawn_draggable_sprite(tex: Texture2D, pos: Vector2) -> Sprite2D:
 	var spr := Sprite2D.new()
 	spr.texture = tex
 	spr.position = pos
+	spr.z_index = 10  # ensures it draws above the background
 
 	var drag_script := load("res://DraggableSprite2D.gd")
 	spr.set_script(drag_script)
 
-	workspace.add_child(spr)
+	sprite_layer.add_child(spr)  # ✅ attach to Node2D layer, not Control
 	return spr
+# =========================================================
+# SAVE / LOAD SYSTEM (Strict-Typed for Godot 4.5)
+# =========================================================
+
+# Default save path (can be replaced by LevelSelector)
+
+
+func set_save_path(new_path: String) -> void:
+	SAVE_PATH = new_path
+	print("💾 [Editor] Save path set to:", SAVE_PATH)
+
+func get_save_path() -> String:
+	return SAVE_PATH
+
+# Convert placed_nodes into savable dictionaries
+func _serialize_level() -> Array[Dictionary]:
+	var data: Array[Dictionary] = []
+	for node: Node in placed_nodes:
+		if not (node is Sprite2D):
+			continue
+		var sprite: Sprite2D = node
+		var tex_path: String = ""
+		if sprite.texture != null and sprite.texture.resource_path != "":
+			tex_path = sprite.texture.resource_path
+		data.append({
+			"texture": tex_path,
+			"position": {"x": sprite.global_position.x, "y": sprite.global_position.y}
+		})
+	return data
+
+
+func _on_save_pressed() -> void:
+	var level_data: Dictionary = {
+		"background": current_bg_path,
+		"music": current_music_path,
+		"objects": _serialize_level()
+	}
+
+	print("🧠 Current SAVE_PATH before writing:", SAVE_PATH)
+
+	var file: FileAccess = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
+	if file == null:
+		_show_hint("⚠ Failed to save level!", 1.8)
+		return
+
+	var json_text := JSON.stringify(level_data, "\t")
+	print("📁 Saving level to:", SAVE_PATH)
+	print("🧾 Data:", json_text)
+
+	file.store_string(json_text)
+	file.close()
+	_show_hint("Level saved locally ✅", 1.8)
+
+func _on_load_pressed() -> void:
+	if not FileAccess.file_exists(SAVE_PATH):
+		_show_hint("⚠ No saved level found!", 1.8)
+		return
+
+	print("📂 Loading saved level directly in editor...")
+	load_level_from_file(SAVE_PATH)
+	_show_hint("Level loaded 🎮", 1.8)
+
+# =========================================================
+# EXTERNAL LOAD ENTRYPOINT (used by Main Menu)
+# =========================================================
+func load_level_from_file(path: String = "user://saved_level.json") -> void:
+	if not FileAccess.file_exists(path):
+		_show_hint("⚠ No saved level found!", 1.8)
+		return
+
+	var file: FileAccess = FileAccess.open(path, FileAccess.READ)
+	if file == null:
+		_show_hint("⚠ Unable to open save file!", 1.8)
+		return
+
+	var text: String = file.get_as_text()
+	file.close()
+
+	var parsed: Variant = JSON.parse_string(text)
+	if typeof(parsed) != TYPE_DICTIONARY:
+		_show_hint("⚠ Invalid save format", 1.8)
+		return
+
+	var data: Dictionary = parsed
+	_on_clear_pressed()
+
+	# Restore background
+	if data.has("background") and data["background"] != "":
+		var bg: Texture2D = load(data["background"])
+		if bg != null:
+			bg_sprite.texture = bg
+			current_bg_path = data["background"]
+
+	# Restore music
+	if data.has("music") and data["music"] != "":
+		var music: AudioStream = load(data["music"])
+		if music != null:
+			music_player.stream = music
+			music_player.play()
+			current_music_path = data["music"]
+
+	if data.has("objects"):
+		var objs: Array = data["objects"]
+		for obj: Variant in objs:
+			if typeof(obj) == TYPE_DICTIONARY:
+				var d: Dictionary = obj
+				if d.has("texture") and d["texture"] != "":
+					var tex: Texture2D = load(d["texture"])
+					if tex != null and d.has("position"):
+						var pos_dict: Dictionary = d["position"]
+						var pos := Vector2(float(pos_dict["x"]), float(pos_dict["y"]))  # ✅ convert properly
+						var spr: Sprite2D = _spawn_draggable_sprite(tex, pos)
+						spr.global_position = pos   # ensures exact placement
+						placed_nodes.append(spr)
+
+	_show_hint("Level loaded from Main Menu 🎮", 1.8)
+	
+func _on_back_pressed() -> void:
+	_show_hint("Returning to Main Menu...", 1.0)
+	await get_tree().create_timer(1.0).timeout  # short delay so hint can show
+	get_tree().change_scene_to_file("res://MainMenu.tscn")  # ✅ use your main menu path
