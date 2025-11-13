@@ -1,12 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://cxcvyqjm3dea2"]
+[gd_scene load_steps=7 format=3 uid="uid://cxcvyqjm3dea2"]
 
 [ext_resource type="PackedScene" uid="uid://bjb0cjtep4sye" path="res://Tile.tscn" id="1_5xdl2"]
+[ext_resource type="Texture2D" uid="uid://dlq8ii6ibcga1" path="res://BG1.png" id="1_cns1f"]
 [ext_resource type="PackedScene" uid="uid://cmhd8xn2hdka0" path="res://Player.tscn" id="2_5xdl2"]
 [ext_resource type="PackedScene" uid="uid://csqw3v78invlh" path="res://HMovingPlatform.tscn" id="3_qttey"]
 [ext_resource type="PackedScene" uid="uid://rhw5j7sgjacw" path="res://Spider.tscn" id="5_0xdjd"]
 [ext_resource type="PackedScene" uid="uid://bwgmu4o40k54e" path="res://EndGoal.tscn" id="5_cns1f"]
 
 [node name="DemoLevel1" type="Node2D"]
+
+[node name="Background1" type="TextureRect" parent="."]
+offset_right = 1151.0
+offset_bottom = 644.0
+texture = ExtResource("1_cns1f")
+stretch_mode = 1
 
 [node name="Tile" parent="." instance=ExtResource("1_5xdl2")]
 position = Vector2(33, 634)

@@ -11,9 +11,9 @@ func _process(_delta: float) -> void:
 	pass
 
 
-func _on_main_menu_pressed() -> void:
-	get_tree().change_scene_to_file("res://MainMenu.tscn")
+func _on_demo_1_pressed() -> void:
+	get_tree().change_scene_to_file("res://DemoLevel1.tscn")
 
 
-func _on_demo_select_pressed() -> void:
-	get_tree().change_scene_to_file("res://DemoLevelSelect.tscn")
+func _on_demo_2_pressed() -> void:
+	get_tree().change_scene_to_file("res://DemoLevel2.tscn")
