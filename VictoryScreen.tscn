@@ -52,7 +52,7 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Main Menu"
 
-[node name="Label" type="Label" parent="."]
+[node name="VictoryText" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -65,11 +65,13 @@ offset_right = 62.0
 offset_bottom = -40.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 26
 text = "Level Complete!"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_44yii")
+autoplay = true
 
 [connection signal="pressed" from="DemoSelect" to="." method="_on_demo_select_pressed"]
 [connection signal="pressed" from="MainMenu" to="." method="_on_main_menu_pressed"]

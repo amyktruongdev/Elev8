@@ -73,6 +73,7 @@ text = "Oops! You Died!"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_gircr")
+autoplay = true
 
 [connection signal="pressed" from="DemoSelect" to="." method="_on_demo_select_pressed"]
 [connection signal="pressed" from="MainMenu" to="." method="_on_main_menu_pressed"]

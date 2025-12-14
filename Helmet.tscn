@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbed20t05eodk"]
+
+[ext_resource type="Texture2D" uid="uid://c3rd6pwvichqa" path="res://Helmet.png" id="1_2fg43"]
+[ext_resource type="Script" uid="uid://c2y1d8mx3h63u" path="res://helmet.gd" id="1_6pqxq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6pqxq"]
+size = Vector2(79, 60)
+
+[node name="Helmet" type="Area2D"]
+script = ExtResource("1_6pqxq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_2fg43")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-7.5, -2)
+shape = SubResource("RectangleShape2D_6pqxq")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,77 @@
+[gd_scene load_steps=9 format=3 uid="uid://c46ahmjw2nkae"]
+
+[ext_resource type="Script" uid="uid://dc1d0wa46co8g" path="res://dissapearing_platform.gd" id="1_ekqot"]
+[ext_resource type="Texture2D" uid="uid://djo4l6vjdkwj1" path="res://DissapearingPlatform.png" id="1_sfyaw"]
+[ext_resource type="Texture2D" uid="uid://brtfajr0txyo7" path="res://DissapearingPlatform2.png" id="3_vfts8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_plyed"]
+size = Vector2(130, 19)
+
+[sub_resource type="Animation" id="Animation_fwd2u"]
+resource_name = "flashing"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.23333332),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("1_sfyaw"), ExtResource("3_vfts8")]
+}
+
+[sub_resource type="Animation" id="Animation_pq70b"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_sfyaw")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yvblb"]
+_data = {
+&"RESET": SubResource("Animation_pq70b"),
+&"flashing": SubResource("Animation_fwd2u")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_evyna"]
+size = Vector2(128, 3)
+
+[node name="DissapearingPlatform" type="StaticBody2D"]
+script = ExtResource("1_ekqot")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -30)
+texture = ExtResource("1_sfyaw")
+flip_v = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-5, 0.5)
+shape = SubResource("RectangleShape2D_plyed")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_yvblb")
+}
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-5, -10.5)
+shape = SubResource("RectangleShape2D_evyna")
+
+[node name="DestructTimer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="DestructTimer" to="." method="_on_destruct_timer_timeout"]

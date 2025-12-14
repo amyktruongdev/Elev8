@@ -2,14 +2,14 @@
 
 [ext_resource type="Texture2D" uid="uid://c748143d8pc8v" path="res://BG2.png" id="1_ar0nf"]
 [ext_resource type="PackedScene" uid="uid://df6ms0l3fnfc6" path="res://WaterTile.tscn" id="1_wg7jh"]
-[ext_resource type="PackedScene" uid="uid://b5mf2ju6kp7q6" path="res://Player2.tscn" id="2_ux4do"]
 [ext_resource type="PackedScene" uid="uid://c6p36ylisk6le" path="res://VMovingPlatform.tscn" id="3_ux4do"]
 [ext_resource type="PackedScene" uid="uid://ctubvswvjb0oy" path="res://Robo.tscn" id="4_44nk5"]
 [ext_resource type="PackedScene" uid="uid://bwgmu4o40k54e" path="res://EndGoal.tscn" id="5_sn4bo"]
+[ext_resource type="PackedScene" uid="uid://dkewu8khni4ci" path="res://Player3.tscn" id="6_ar0nf"]
 
 [node name="DemoLevel2" type="Node2D"]
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Background2" type="TextureRect" parent="."]
 offset_right = 1154.0
 offset_bottom = 643.0
 texture = ExtResource("1_ar0nf")
@@ -156,9 +156,6 @@ position = Vector2(1147, 648)
 [node name="VMovingPlatform" parent="." instance=ExtResource("3_ux4do")]
 position = Vector2(1025, 595)
 
-[node name="Player2" parent="." instance=ExtResource("2_ux4do")]
-position = Vector2(172, 492)
-
 [node name="Robo" parent="." instance=ExtResource("4_44nk5")]
 position = Vector2(572, 590)
 
@@ -170,3 +167,6 @@ position = Vector2(551, 361)
 
 [node name="EndGoal" parent="." instance=ExtResource("5_sn4bo")]
 position = Vector2(101, 101)
+
+[node name="Player3" parent="." instance=ExtResource("6_ar0nf")]
+position = Vector2(202, 507)

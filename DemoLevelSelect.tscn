@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://do5pooutb5arv"]
+[gd_scene load_steps=4 format=3 uid="uid://do5pooutb5arv"]
 
 [ext_resource type="Script" uid="uid://b1nvup3dv4u4e" path="res://demo_level_select.gd" id="1_yytgh"]
 [ext_resource type="Texture2D" uid="uid://cnxf7kjj7rvwe" path="res://Select.png" id="2_tqh06"]
+[ext_resource type="AudioStream" uid="uid://cx3e0xjym7blf" path="res://b423b42.wav" id="3_1323m"]
 
 [node name="DemoLevelSelect" type="Control"]
 layout_mode = 3
@@ -30,6 +31,7 @@ offset_left = -130.0
 offset_right = 130.0
 offset_bottom = 53.0
 grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 48
 text = "Select a Demo"
 
@@ -106,11 +108,19 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Controls:
 Left Key => Move left
 Right Key => Move right
-Up key => Jump"
+Up Key => Jump
+For Demo 4, Space Key => Dash"
 horizontal_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_1323m")
+autoplay = true
 
 [connection signal="pressed" from="Demo1" to="." method="_on_demo_1_pressed"]
 [connection signal="pressed" from="Demo2" to="." method="_on_demo_2_pressed"]
+[connection signal="pressed" from="Demo3" to="." method="_on_demo_3_pressed"]
+[connection signal="pressed" from="Demo4" to="." method="_on_demo_4_pressed"]

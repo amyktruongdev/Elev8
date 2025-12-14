@@ -6,6 +6,14 @@ const JUMP_VELOCITY = -550.0
 
 @onready var sprite_2d = $Sprite2D
 
+var health = 0
+
+func damage_taken():
+	if (health <= 0):
+		get_tree().change_scene_to_file.call_deferred("res://DeathScreen.tscn")
+	else:
+		health -= 1
+
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.

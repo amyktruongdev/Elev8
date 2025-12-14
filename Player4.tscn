@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqokdkxe42rwj"]
+
+[ext_resource type="Texture2D" uid="uid://ssxmuu1bw1im" path="res://bear.png" id="1_jiult"]
+[ext_resource type="Script" uid="uid://cin8aldk3haql" path="res://player_4.gd" id="1_la4jk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_la4jk"]
+size = Vector2(64, 114)
+
+[node name="Player4" type="CharacterBody2D"]
+script = ExtResource("1_la4jk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_jiult")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_la4jk")
+
+[node name="DurationTimer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
+[node name="CooldownTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="DurationTimer" to="." method="_on_duration_timer_timeout"]
+[connection signal="timeout" from="CooldownTimer" to="." method="_on_cooldown_timer_timeout"]

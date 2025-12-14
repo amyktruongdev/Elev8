@@ -17,3 +17,13 @@ texture = ExtResource("1_a06vx")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-26, 33.5)
 shape = SubResource("RectangleShape2D_mjxxk")
+
+[node name="BulletSpawner" type="Marker2D" parent="."]
+position = Vector2(-84, 41)
+scale = Vector2(-1, 1)
+
+[node name="ShotTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="timeout" from="ShotTimer" to="." method="_on_shot_timer_timeout"]

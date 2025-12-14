@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://ctubvswvjb0oy"]
 
 [ext_resource type="Script" uid="uid://dxjs7hji6flwp" path="res://robo.gd" id="1_y66wx"]
-[ext_resource type="Texture2D" uid="uid://rjo6ur2xb2dl" path="res://SRobo.png" id="2_y66wx"]
+[ext_resource type="Texture2D" uid="uid://omu4nv35dtq0" path="res://FloorRobo.png" id="2_y66wx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y66wx"]
 size = Vector2(32, 14)

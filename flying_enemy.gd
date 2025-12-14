@@ -20,3 +20,8 @@ func flip():
 
 func _on_timer_timeout() -> void:
 	flip()
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if "Player" in body.name:
+		body.damage_taken()

@@ -78,6 +78,7 @@ text = "ELEV8"
 
 [node name="BGMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_u7cqb")
+autoplay = true
 
 [node name="Grass" type="Panel" parent="."]
 layout_mode = 1

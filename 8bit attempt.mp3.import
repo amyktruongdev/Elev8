@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/8bit attempt.mp3-7c35b59d8c866aa3eaf37c0c2e28
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0
