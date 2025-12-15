@@ -51,7 +51,7 @@ grow_vertical = 2
 
 [node name="Load" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-text = "Load a Level"
+text = "Start"
 
 [node name="Demo" type="Button" parent="VBoxContainer"]
 layout_mode = 2
