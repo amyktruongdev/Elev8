@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://3o60df1wq68c"]
+[gd_scene load_steps=13 format=3 uid="uid://3o60df1wq68c"]
 
 [ext_resource type="Script" uid="uid://dg4q3cipt27xy" path="res://main_menu.gd" id="1_e2xy7"]
 [ext_resource type="Texture2D" uid="uid://b473d8p2jud13" path="res://BgImages/Sky.png" id="2_fimr5"]
@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://ch5v15j4b573b" path="res://root_guy.png" id="6_qie43"]
 [ext_resource type="Texture2D" uid="uid://ssxmuu1bw1im" path="res://bear.png" id="7_61cf8"]
 [ext_resource type="Texture2D" uid="uid://b6d6sf6mw6bq2" path="res://BgImages/Sun.png" id="8_rnncn"]
+[ext_resource type="Texture2D" uid="uid://kutr7wfyvkc6" path="res://BgImages/cloud1.png" id="9_u7cqb"]
+[ext_resource type="Texture2D" uid="uid://dkc1s72cp1yax" path="res://BgImages/cloud2.png" id="10_afec1"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fu7sn"]
 texture = ExtResource("2_fimr5")
@@ -47,10 +49,6 @@ offset_bottom = 102.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="_Start_" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-text = "Create a Level"
-
 [node name="Load" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "Load a Level"
@@ -85,7 +83,7 @@ anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_top = -116.0
-offset_right = 1152.0
+offset_right = 1284.0
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxTexture_nlkkf")
 
@@ -106,26 +104,41 @@ texture = ExtResource("5_31qfy")
 
 [node name="RootGuy" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 299.0
-offset_top = 439.0
-offset_right = 395.0
-offset_bottom = 535.0
+offset_left = 310.0
+offset_top = 509.0
+offset_right = 406.0
+offset_bottom = 605.0
 texture = ExtResource("6_qie43")
 
 [node name="bear" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 761.0
-offset_top = 406.0
-offset_right = 886.0
-offset_bottom = 531.0
+offset_left = 831.0
+offset_top = 482.0
+offset_right = 956.0
+offset_bottom = 607.0
 texture = ExtResource("7_61cf8")
 
 [node name="Sun" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 877.0
-offset_top = 41.0
-offset_right = 1037.0
-offset_bottom = 201.0
+offset_left = 963.0
+offset_top = -41.0
+offset_right = 1339.0
+offset_bottom = 331.0
 texture = ExtResource("8_rnncn")
+
+[node name="Cloud1" type="Sprite2D" parent="."]
+position = Vector2(268.00003, 273)
+scale = Vector2(3.6, 2.92)
+texture = ExtResource("9_u7cqb")
+
+[node name="Cloud2" type="Sprite2D" parent="."]
+position = Vector2(1035, 269)
+scale = Vector2(3.3, 3.12)
+texture = ExtResource("10_afec1")
+
+[node name="Cloud3" type="Sprite2D" parent="."]
+position = Vector2(636, 157)
+scale = Vector2(4.94, 4.94)
+texture = ExtResource("9_u7cqb")
 
 [connection signal="pressed" from="VBoxContainer/Demo" to="." method="_on_demo_pressed"]
