@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://d2xobe6wcdje2"]
+[gd_scene load_steps=8 format=3 uid="uid://d2xobe6wcdje2"]
 
 [ext_resource type="Texture2D" uid="uid://cnhqn8djsbem0" path="res://BG4.png" id="1_5yy35"]
 [ext_resource type="PackedScene" uid="uid://13a86er7njvw" path="res://Crate.tscn" id="1_w27tu"]
 [ext_resource type="PackedScene" uid="uid://dqokdkxe42rwj" path="res://Player4.tscn" id="2_a6wuc"]
 [ext_resource type="PackedScene" uid="uid://c46ahmjw2nkae" path="res://DissapearingPlatform.tscn" id="4_b5bcs"]
 [ext_resource type="PackedScene" uid="uid://caahfxmtlerwe" path="res://ShooterRobo.tscn" id="5_5yy35"]
+[ext_resource type="PackedScene" uid="uid://cwu1lyo4hhs48" path="res://Gun.tscn" id="6_gp6e7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b5bcs"]
 size = Vector2(20, 648)
@@ -91,3 +92,6 @@ position = Vector2(338, 468)
 
 [node name="ShooterRobo" parent="." instance=ExtResource("5_5yy35")]
 position = Vector2(886, 523)
+
+[node name="Gun" parent="." instance=ExtResource("6_gp6e7")]
+position = Vector2(560, 469)

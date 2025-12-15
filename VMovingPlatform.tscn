@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dafyilvnuyk0q" path="res://RockBlock.png" id="1_hwlws"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v4yvk"]
-size = Vector2(77, 47)
+size = Vector2(77, 49)
 
 [sub_resource type="Animation" id="Animation_v4yvk"]
 length = 0.001
@@ -51,7 +51,7 @@ _data = {
 texture = ExtResource("1_hwlws")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
-position = Vector2(-4.5, -11.5)
+position = Vector2(-4.5, -12.5)
 shape = SubResource("RectangleShape2D_v4yvk")
 one_way_collision = true
 

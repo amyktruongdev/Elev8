@@ -1,23 +1,56 @@
 extends CharacterBody2D
 
-
 const SPEED = 200.0
 const JUMP_VELOCITY = -550.0
 
 @onready var sprite_2d = $Sprite2D
 @onready var timer1: Timer = $DurationTimer
 @onready var timer2: Timer = $CooldownTimer
+@onready var iframetimer: Timer = $IFrameTimer
+@onready var invincibletimer: Timer = $InvincibleTimer
 
 var is_dashing = false
-var can_dash = true
+var can_dash = false
 var dash_speed = 3
 var health = 0
+var can_take_damage = true
+var is_invincible = false
+var can_attack = false
+
+func enable_attack():
+	can_attack = true
+	sprite_2d.modulate = Color.GREEN
+
+func disable_attack():
+	can_attack = false
+	sprite_2d.modulate = Color.WHITE
+
+func activate_dash():
+	can_dash = true
+
+func become_invincible():
+	is_invincible = true
+	sprite_2d.modulate = Color.YELLOW
+	invincibletimer.start()
+
+func health_increase():
+	health += 1
 
 func damage_taken():
-	if (health <= 0):
-		get_tree().change_scene_to_file.call_deferred("res://DeathScreen.tscn")
-	else:
-		health -= 1
+	if can_take_damage && is_invincible == false:
+		if health <= 0:
+			get_tree().change_scene_to_file.call_deferred("res://DeathScreen.tscn")
+		else:
+			can_take_damage = false
+			health -= 1
+			sprite_2d.modulate = Color.RED
+			iframetimer.start()
+
+func _ready():
+	health = 1
+	can_take_damage = true
+	is_invincible = false
+	can_attack = false
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -49,10 +82,17 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
-
 func _on_duration_timer_timeout() -> void:
 	is_dashing = false
 
-
 func _on_cooldown_timer_timeout() -> void:
 	can_dash = true
+
+func _on_i_frame_timer_timeout() -> void:
+	can_take_damage = true
+	sprite_2d.modulate = Color.WHITE
+
+func _on_invincible_timer_timeout() -> void:
+	is_invincible = false
+	sprite_2d.modulate = Color.WHITE
+	

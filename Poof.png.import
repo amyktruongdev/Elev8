@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cejlslkttkpt5"
-path="res://.godot/imported/Bullet.png-8556c7b1165e553b17f4d76e597a3ac5.ctex"
+uid="uid://cp31h7wnjh5w3"
+path="res://.godot/imported/Poof.png-9ce762224b9add49a394eb1c45c07d06.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Bullet.png"
-dest_files=["res://.godot/imported/Bullet.png-8556c7b1165e553b17f4d76e597a3ac5.ctex"]
+source_file="res://Poof.png"
+dest_files=["res://.godot/imported/Poof.png-9ce762224b9add49a394eb1c45c07d06.ctex"]
 
 [params]
 

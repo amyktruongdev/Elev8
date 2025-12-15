@@ -13,4 +13,5 @@ func _process(_delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if "Player" in body.name:
+		body.health_increase()
 		queue_free()

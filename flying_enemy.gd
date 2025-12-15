@@ -21,7 +21,13 @@ func flip():
 func _on_timer_timeout() -> void:
 	flip()
 
+func die():
+	queue_free()
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if "Player" in body.name:
-		body.damage_taken()
+		if body.can_attack:
+			die()
+			body.disable_attack()
+		else:
+			body.damage_taken()

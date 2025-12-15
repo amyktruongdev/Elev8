@@ -16,6 +16,5 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		set_process(true)
 		$DestructTimer.start(2.5)
 
-
 func _on_destruct_timer_timeout() -> void:
 	queue_free()

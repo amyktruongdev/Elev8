@@ -1,11 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://b8m776bliob4x"]
+[gd_scene load_steps=7 format=3 uid="uid://b8m776bliob4x"]
 
 [ext_resource type="Texture2D" uid="uid://cjm4laelaemf7" path="res://BG3.png" id="1_iyj5v"]
 [ext_resource type="PackedScene" uid="uid://b0dyfi0jgj8d4" path="res://Stone.tscn" id="1_r73n7"]
 [ext_resource type="PackedScene" uid="uid://b8bfv5e2id2fc" path="res://JumpPlatform.tscn" id="3_fh04y"]
 [ext_resource type="PackedScene" uid="uid://0gvnchd0kjko" path="res://FlyingEnemy.tscn" id="4_l6wej"]
 [ext_resource type="PackedScene" uid="uid://b5mf2ju6kp7q6" path="res://Player2.tscn" id="4_r73n7"]
-[ext_resource type="PackedScene" uid="uid://cwu1lyo4hhs48" path="res://Gun.tscn" id="6_fh04y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_efb5j"]
 size = Vector2(20, 649)
@@ -92,6 +91,3 @@ position = Vector2(790, 429)
 
 [node name="Player2" parent="." instance=ExtResource("4_r73n7")]
 position = Vector2(190, 464)
-
-[node name="Gun" parent="." instance=ExtResource("6_fh04y")]
-position = Vector2(601, 494)
