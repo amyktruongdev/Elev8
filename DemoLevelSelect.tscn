@@ -1,8 +1,14 @@
 [gd_scene load_steps=4 format=3 uid="uid://do5pooutb5arv"]
 
+<<<<<<< HEAD
 [ext_resource type="Script" path="res://demo_level_select.gd" id="1_yytgh"]
 [ext_resource type="Texture2D" path="res://Select.png" id="2_tqh06"]
 [ext_resource type="AudioStream" path="res://b423b42.wav" id="3_1323m"]
+=======
+[ext_resource type="Script" uid="uid://b1nvup3dv4u4e" path="res://demo_level_select.gd" id="1_yytgh"]
+[ext_resource type="Texture2D" uid="uid://cnxf7kjj7rvwe" path="res://Select.png" id="2_tqh06"]
+[ext_resource type="AudioStream" uid="uid://cx3e0xjym7blf" path="res://b423b42.wav" id="3_1323m"]
+>>>>>>> master
 
 [node name="DemoLevelSelect" type="Control"]
 layout_mode = 3

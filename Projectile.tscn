@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://pl4xupnty43h"]
+
+[ext_resource type="Script" uid="uid://b6j7jgs2gx0ca" path="res://projectile.gd" id="1_1cf02"]
+[ext_resource type="Texture2D" uid="uid://dk1i0xjaue10b" path="res://SProjectile.png" id="3_3rnyv"]
+[ext_resource type="Texture2D" uid="uid://cvqiqqqxfmmbo" path="res://SProjectile2.png" id="4_dbogy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e7peq"]
+radius = 17.029387
+
+[sub_resource type="Animation" id="Animation_dbogy"]
+resource_name = "newFlash"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.26666668),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("3_3rnyv"), ExtResource("4_dbogy")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dbogy"]
+_data = {
+&"newFlash": SubResource("Animation_dbogy")
+}
+
+[node name="Projectile" type="Node2D"]
+script = ExtResource("1_1cf02")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_3rnyv")
+
+[node name="Area2D" type="Area2D" parent="."]
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_e7peq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_dbogy")
+}
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+rect = Rect2(-16, -16, 32, 32)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

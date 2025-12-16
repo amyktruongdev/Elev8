@@ -11,14 +11,17 @@ config_version=5
 [application]
 
 config/name="ELEV8"
-run/main_scene="uid://3o60df1wq68c"
+run/main_scene="uid://do5pooutb5arv"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
+<<<<<<< HEAD
 [autoload]
 
 GlobalState="*res://GlobalState.gd"
 
+=======
+>>>>>>> master
 [display]
 
 window/stretch/mode="viewport"

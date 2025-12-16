@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cpjby6x6tap18"]
+[gd_scene load_steps=4 format=3 uid="uid://cpjby6x6tap18"]
 
 [ext_resource type="Script" uid="uid://sngbeh8a0b3n" path="res://victory_screen.gd" id="1_yvem7"]
 [ext_resource type="AudioStream" uid="uid://rlifkbeo7x7d" path="res://8bit attempt.mp3" id="2_44yii"]
+[ext_resource type="Texture2D" uid="uid://c8cvol25wnmfw" path="res://Victory.png" id="2_earqp"]
 
 [node name="VictoryScreen" type="Control"]
 layout_mode = 3
@@ -12,7 +13,16 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_yvem7")
 
-[node name="Button" type="Button" parent="."]
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_earqp")
+
+[node name="DemoSelect" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -25,9 +35,24 @@ offset_right = 59.5
 offset_bottom = 26.5
 grow_horizontal = 2
 grow_vertical = 2
+text = "Try Another Demo"
+
+[node name="MainMenu" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -59.5
+offset_top = 39.5
+offset_right = 59.5
+offset_bottom = 92.5
+grow_horizontal = 2
+grow_vertical = 2
 text = "Main Menu"
 
-[node name="Label" type="Label" parent="."]
+[node name="VictoryText" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -40,6 +65,7 @@ offset_right = 62.0
 offset_bottom = -40.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 26
 text = "Level Complete!"
 
@@ -47,4 +73,5 @@ text = "Level Complete!"
 stream = ExtResource("2_44yii")
 autoplay = true
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="DemoSelect" to="." method="_on_demo_select_pressed"]
+[connection signal="pressed" from="MainMenu" to="." method="_on_main_menu_pressed"]

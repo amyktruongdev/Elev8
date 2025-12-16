@@ -1,0 +1,93 @@
+[gd_scene load_steps=7 format=3 uid="uid://b8m776bliob4x"]
+
+[ext_resource type="Texture2D" uid="uid://cjm4laelaemf7" path="res://BG3.png" id="1_iyj5v"]
+[ext_resource type="PackedScene" uid="uid://b0dyfi0jgj8d4" path="res://Stone.tscn" id="1_r73n7"]
+[ext_resource type="PackedScene" uid="uid://b8bfv5e2id2fc" path="res://JumpPlatform.tscn" id="3_fh04y"]
+[ext_resource type="PackedScene" uid="uid://0gvnchd0kjko" path="res://FlyingEnemy.tscn" id="4_l6wej"]
+[ext_resource type="PackedScene" uid="uid://b5mf2ju6kp7q6" path="res://Player2.tscn" id="4_r73n7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_efb5j"]
+size = Vector2(20, 649)
+
+[node name="DemoLevel3" type="Node2D"]
+
+[node name="Background3" type="TextureRect" parent="."]
+offset_right = 1153.0
+offset_bottom = 647.0
+texture = ExtResource("1_iyj5v")
+stretch_mode = 1
+
+[node name="Stone" parent="." instance=ExtResource("1_r73n7")]
+position = Vector2(32, 615)
+
+[node name="Stone2" parent="." instance=ExtResource("1_r73n7")]
+position = Vector2(96, 615)
+
+[node name="Stone3" parent="." instance=ExtResource("1_r73n7")]
+position = Vector2(160, 615)
+
+[node name="Stone4" parent="." instance=ExtResource("1_r73n7")]
+position = Vector2(224, 615)
+
+[node name="Stone5" parent="." instance=ExtResource("1_r73n7")]
+position = Vector2(288, 615)
+
+[node name="Stone6" parent="." instance=ExtResource("1_r73n7")]
+position = Vector2(352, 615)
+
+[node name="Stone7" parent="." instance=ExtResource("1_r73n7")]
+position = Vector2(416, 615)
+
+[node name="Stone8" parent="." instance=ExtResource("1_r73n7")]
+position = Vector2(480, 615)
+
+[node name="Stone9" parent="." instance=ExtResource("1_r73n7")]
+position = Vector2(544, 615)
+
+[node name="Stone10" parent="." instance=ExtResource("1_r73n7")]
+position = Vector2(608, 615)
+
+[node name="Stone11" parent="." instance=ExtResource("1_r73n7")]
+position = Vector2(672, 615)
+
+[node name="Stone12" parent="." instance=ExtResource("1_r73n7")]
+position = Vector2(736, 615)
+
+[node name="Stone13" parent="." instance=ExtResource("1_r73n7")]
+position = Vector2(800, 615)
+
+[node name="Stone14" parent="." instance=ExtResource("1_r73n7")]
+position = Vector2(864, 615)
+
+[node name="Stone15" parent="." instance=ExtResource("1_r73n7")]
+position = Vector2(928, 615)
+
+[node name="Stone16" parent="." instance=ExtResource("1_r73n7")]
+position = Vector2(992, 615)
+
+[node name="Stone17" parent="." instance=ExtResource("1_r73n7")]
+position = Vector2(1056, 615)
+
+[node name="Stone18" parent="." instance=ExtResource("1_r73n7")]
+position = Vector2(1120, 615)
+
+[node name="Boundary1" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary1"]
+position = Vector2(-10, 324.5)
+shape = SubResource("RectangleShape2D_efb5j")
+
+[node name="Boundary2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary2"]
+position = Vector2(1163, 324.5)
+shape = SubResource("RectangleShape2D_efb5j")
+
+[node name="JumpPlatform" parent="." instance=ExtResource("3_fh04y")]
+position = Vector2(406, 469)
+
+[node name="FlyingEnemy" parent="." instance=ExtResource("4_l6wej")]
+position = Vector2(790, 429)
+
+[node name="Player2" parent="." instance=ExtResource("4_r73n7")]
+position = Vector2(190, 464)

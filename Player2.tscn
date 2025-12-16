@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://b5mf2ju6kp7q6"]
+
+[ext_resource type="Texture2D" uid="uid://pqp4bymm4g3s" path="res://Strawberry.png" id="1_a06vx"]
+[ext_resource type="Script" uid="uid://d1c7ndx3gooyd" path="res://player_2.gd" id="1_mjxxk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mjxxk"]
+size = Vector2(52, 93)
+
+[node name="Player2" type="CharacterBody2D"]
+script = ExtResource("1_mjxxk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-24, 20.000002)
+scale = Vector2(0.7, 0.74999994)
+texture = ExtResource("1_a06vx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-26, 33.5)
+shape = SubResource("RectangleShape2D_mjxxk")
+
+[node name="IFrameTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="InvincibleTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="DurationTimer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
+[node name="CooldownTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="IFrameTimer" to="." method="_on_i_frame_timer_timeout"]
+[connection signal="timeout" from="InvincibleTimer" to="." method="_on_invincible_timer_timeout"]
+[connection signal="timeout" from="DurationTimer" to="." method="_on_duration_timer_timeout"]
+[connection signal="timeout" from="CooldownTimer" to="." method="_on_cooldown_timer_timeout"]

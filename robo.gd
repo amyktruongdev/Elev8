@@ -15,6 +15,8 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
+func die():
+	queue_free()
 
 func _on_timer_timeout() -> void:
 	jump_check = true
@@ -22,4 +24,8 @@ func _on_timer_timeout() -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if "Player" in body.name:
-		get_tree().change_scene_to_file("res://DeathScreen.tscn")
+		if body.can_attack:
+			die()
+			body.disable_attack()
+		else:
+			body.damage_taken()

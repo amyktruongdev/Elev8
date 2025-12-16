@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://bl53ebxyelglk" path="res://spider.gd" id="1_vbg4t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vbg4t"]
-size = Vector2(50, 4)
+size = Vector2(24, 4)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ln14a"]
 size = Vector2(52, 34)

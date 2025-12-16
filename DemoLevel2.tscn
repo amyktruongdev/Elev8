@@ -1,0 +1,176 @@
+[gd_scene load_steps=8 format=3 uid="uid://b7wbfc82suk5m"]
+
+[ext_resource type="Texture2D" uid="uid://c748143d8pc8v" path="res://BG2.png" id="1_ar0nf"]
+[ext_resource type="PackedScene" uid="uid://df6ms0l3fnfc6" path="res://WaterTile.tscn" id="1_wg7jh"]
+[ext_resource type="PackedScene" uid="uid://c6p36ylisk6le" path="res://VMovingPlatform.tscn" id="3_ux4do"]
+[ext_resource type="PackedScene" uid="uid://ctubvswvjb0oy" path="res://Robo.tscn" id="4_44nk5"]
+[ext_resource type="PackedScene" uid="uid://bwgmu4o40k54e" path="res://EndGoal.tscn" id="5_sn4bo"]
+[ext_resource type="PackedScene" uid="uid://dkewu8khni4ci" path="res://Player3.tscn" id="6_ar0nf"]
+[ext_resource type="PackedScene" uid="uid://cbed20t05eodk" path="res://Helmet.tscn" id="7_54o7s"]
+
+[node name="DemoLevel2" type="Node2D"]
+
+[node name="Background2" type="TextureRect" parent="."]
+offset_right = 1154.0
+offset_bottom = 643.0
+texture = ExtResource("1_ar0nf")
+stretch_mode = 1
+
+[node name="WaterTile" parent="." instance=ExtResource("1_wg7jh")]
+position = Vector2(42, 648)
+
+[node name="WaterTile41" parent="." instance=ExtResource("1_wg7jh")]
+position = Vector2(729, 370)
+
+[node name="WaterTile42" parent="." instance=ExtResource("1_wg7jh")]
+position = Vector2(814, 370)
+
+[node name="WaterTile43" parent="." instance=ExtResource("1_wg7jh")]
+position = Vector2(899, 370)
+
+[node name="WaterTile44" parent="." instance=ExtResource("1_wg7jh")]
+position = Vector2(122, 175)
+
+[node name="WaterTile45" parent="." instance=ExtResource("1_wg7jh")]
+position = Vector2(207, 175)
+
+[node name="WaterTile46" parent="." instance=ExtResource("1_wg7jh")]
+position = Vector2(292, 175)
+
+[node name="WaterTile15" parent="." instance=ExtResource("1_wg7jh")]
+position = Vector2(-44, 601)
+
+[node name="WaterTile16" parent="." instance=ExtResource("1_wg7jh")]
+position = Vector2(-44, 554)
+
+[node name="WaterTile17" parent="." instance=ExtResource("1_wg7jh")]
+position = Vector2(-44, 507)
+
+[node name="WaterTile18" parent="." instance=ExtResource("1_wg7jh")]
+position = Vector2(-44, 460)
+
+[node name="WaterTile19" parent="." instance=ExtResource("1_wg7jh")]
+position = Vector2(-44, 413)
+
+[node name="WaterTile20" parent="." instance=ExtResource("1_wg7jh")]
+position = Vector2(-44, 366)
+
+[node name="WaterTile21" parent="." instance=ExtResource("1_wg7jh")]
+position = Vector2(-44, 319)
+
+[node name="WaterTile22" parent="." instance=ExtResource("1_wg7jh")]
+position = Vector2(-44, 272)
+
+[node name="WaterTile23" parent="." instance=ExtResource("1_wg7jh")]
+position = Vector2(-44, 225)
+
+[node name="WaterTile24" parent="." instance=ExtResource("1_wg7jh")]
+position = Vector2(-44, 178)
+
+[node name="WaterTile25" parent="." instance=ExtResource("1_wg7jh")]
+position = Vector2(-44, 131)
+
+[node name="WaterTile26" parent="." instance=ExtResource("1_wg7jh")]
+position = Vector2(-44, 84)
+
+[node name="WaterTile27" parent="." instance=ExtResource("1_wg7jh")]
+position = Vector2(-44, 37)
+
+[node name="WaterTile28" parent="." instance=ExtResource("1_wg7jh")]
+position = Vector2(1197, 601)
+
+[node name="WaterTile29" parent="." instance=ExtResource("1_wg7jh")]
+position = Vector2(1197, 554)
+
+[node name="WaterTile30" parent="." instance=ExtResource("1_wg7jh")]
+position = Vector2(1197, 507)
+
+[node name="WaterTile31" parent="." instance=ExtResource("1_wg7jh")]
+position = Vector2(1197, 460)
+
+[node name="WaterTile32" parent="." instance=ExtResource("1_wg7jh")]
+position = Vector2(1197, 413)
+
+[node name="WaterTile33" parent="." instance=ExtResource("1_wg7jh")]
+position = Vector2(1197, 366)
+
+[node name="WaterTile34" parent="." instance=ExtResource("1_wg7jh")]
+position = Vector2(1197, 319)
+
+[node name="WaterTile35" parent="." instance=ExtResource("1_wg7jh")]
+position = Vector2(1197, 272)
+
+[node name="WaterTile36" parent="." instance=ExtResource("1_wg7jh")]
+position = Vector2(1197, 225)
+
+[node name="WaterTile37" parent="." instance=ExtResource("1_wg7jh")]
+position = Vector2(1197, 178)
+
+[node name="WaterTile38" parent="." instance=ExtResource("1_wg7jh")]
+position = Vector2(1197, 131)
+
+[node name="WaterTile39" parent="." instance=ExtResource("1_wg7jh")]
+position = Vector2(1197, 84)
+
+[node name="WaterTile40" parent="." instance=ExtResource("1_wg7jh")]
+position = Vector2(1197, 37)
+
+[node name="WaterTile2" parent="." instance=ExtResource("1_wg7jh")]
+position = Vector2(127, 648)
+
+[node name="WaterTile3" parent="." instance=ExtResource("1_wg7jh")]
+position = Vector2(212, 648)
+
+[node name="WaterTile4" parent="." instance=ExtResource("1_wg7jh")]
+position = Vector2(297, 648)
+
+[node name="WaterTile5" parent="." instance=ExtResource("1_wg7jh")]
+position = Vector2(382, 648)
+
+[node name="WaterTile6" parent="." instance=ExtResource("1_wg7jh")]
+position = Vector2(467, 648)
+
+[node name="WaterTile7" parent="." instance=ExtResource("1_wg7jh")]
+position = Vector2(552, 648)
+
+[node name="WaterTile8" parent="." instance=ExtResource("1_wg7jh")]
+position = Vector2(637, 648)
+
+[node name="WaterTile9" parent="." instance=ExtResource("1_wg7jh")]
+position = Vector2(722, 648)
+
+[node name="WaterTile10" parent="." instance=ExtResource("1_wg7jh")]
+position = Vector2(807, 648)
+
+[node name="WaterTile11" parent="." instance=ExtResource("1_wg7jh")]
+position = Vector2(892, 648)
+
+[node name="WaterTile12" parent="." instance=ExtResource("1_wg7jh")]
+position = Vector2(977, 648)
+
+[node name="WaterTile13" parent="." instance=ExtResource("1_wg7jh")]
+position = Vector2(1062, 648)
+
+[node name="WaterTile14" parent="." instance=ExtResource("1_wg7jh")]
+position = Vector2(1147, 648)
+
+[node name="VMovingPlatform" parent="." instance=ExtResource("3_ux4do")]
+position = Vector2(1025, 595)
+
+[node name="Robo" parent="." instance=ExtResource("4_44nk5")]
+position = Vector2(572, 590)
+
+[node name="Robo2" parent="." instance=ExtResource("4_44nk5")]
+position = Vector2(726, 310)
+
+[node name="VMovingPlatform2" parent="." instance=ExtResource("3_ux4do")]
+position = Vector2(551, 361)
+
+[node name="EndGoal" parent="." instance=ExtResource("5_sn4bo")]
+position = Vector2(101, 101)
+
+[node name="Player3" parent="." instance=ExtResource("6_ar0nf")]
+position = Vector2(202, 507)
+
+[node name="Helmet" parent="." instance=ExtResource("7_54o7s")]
+position = Vector2(845, 524)

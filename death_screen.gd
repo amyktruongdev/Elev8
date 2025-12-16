@@ -10,10 +10,9 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	pass
 
-
-func _on_retry_pressed() -> void:
-	get_tree().change_scene_to_file("res://DemoLevel1.tscn")
-
-
 func _on_main_menu_pressed() -> void:
 	get_tree().change_scene_to_file("res://MainMenu.tscn")
+
+
+func _on_demo_select_pressed() -> void:
+	get_tree().change_scene_to_file("res://DemoLevelSelect.tscn")

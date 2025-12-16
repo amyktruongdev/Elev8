@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://b8bfv5e2id2fc"]
+
+[ext_resource type="Script" uid="uid://bcrhtu76rfb8s" path="res://jump_platform.gd" id="1_e5scw"]
+[ext_resource type="Texture2D" uid="uid://6vdo3db3d8y4" path="res://JumpPlatform.png" id="1_p15fg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e5scw"]
+size = Vector2(96, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p15fg"]
+size = Vector2(94, 1)
+
+[node name="JumpPlatform" type="StaticBody2D"]
+script = ExtResource("1_e5scw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_p15fg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_e5scw")
+
+[node name="Detector" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detector"]
+position = Vector2(0, -2.5)
+shape = SubResource("RectangleShape2D_p15fg")
+
+[connection signal="body_entered" from="Detector" to="." method="_on_detector_body_entered"]

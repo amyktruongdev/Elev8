@@ -25,7 +25,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_80igo")
 
-[node name="Retry" type="Button" parent="."]
+[node name="DemoSelect" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -38,7 +38,7 @@ offset_right = 54.0
 offset_bottom = 24.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "Retry"
+text = "Try Another Demo"
 
 [node name="MainMenu" type="Button" parent="."]
 layout_mode = 1
@@ -75,5 +75,5 @@ text = "Oops! You Died!"
 stream = ExtResource("3_gircr")
 autoplay = true
 
-[connection signal="pressed" from="Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="DemoSelect" to="." method="_on_demo_select_pressed"]
 [connection signal="pressed" from="MainMenu" to="." method="_on_main_menu_pressed"]

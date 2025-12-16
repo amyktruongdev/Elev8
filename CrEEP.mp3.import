@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/CrEEP.mp3-542b0b7332422f3761b0885f6e519e3f.mp
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

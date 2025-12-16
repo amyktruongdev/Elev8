@@ -1,0 +1,97 @@
+[gd_scene load_steps=8 format=3 uid="uid://d2xobe6wcdje2"]
+
+[ext_resource type="Texture2D" uid="uid://cnhqn8djsbem0" path="res://BG4.png" id="1_5yy35"]
+[ext_resource type="PackedScene" uid="uid://13a86er7njvw" path="res://Crate.tscn" id="1_w27tu"]
+[ext_resource type="PackedScene" uid="uid://dqokdkxe42rwj" path="res://Player4.tscn" id="2_a6wuc"]
+[ext_resource type="PackedScene" uid="uid://c46ahmjw2nkae" path="res://DissapearingPlatform.tscn" id="4_b5bcs"]
+[ext_resource type="PackedScene" uid="uid://caahfxmtlerwe" path="res://ShooterRobo.tscn" id="5_5yy35"]
+[ext_resource type="PackedScene" uid="uid://cwu1lyo4hhs48" path="res://Gun.tscn" id="6_gp6e7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b5bcs"]
+size = Vector2(20, 648)
+
+[node name="DemoLevel4" type="Node2D"]
+
+[node name="Background4" type="TextureRect" parent="."]
+offset_right = 1148.0
+offset_bottom = 649.0
+texture = ExtResource("1_5yy35")
+stretch_mode = 1
+
+[node name="Crate" parent="." instance=ExtResource("1_w27tu")]
+position = Vector2(32, 616)
+
+[node name="Crate2" parent="." instance=ExtResource("1_w27tu")]
+position = Vector2(96, 616)
+
+[node name="Crate3" parent="." instance=ExtResource("1_w27tu")]
+position = Vector2(160, 616)
+
+[node name="Crate4" parent="." instance=ExtResource("1_w27tu")]
+position = Vector2(224, 616)
+
+[node name="Crate5" parent="." instance=ExtResource("1_w27tu")]
+position = Vector2(288, 616)
+
+[node name="Crate6" parent="." instance=ExtResource("1_w27tu")]
+position = Vector2(352, 616)
+
+[node name="Crate7" parent="." instance=ExtResource("1_w27tu")]
+position = Vector2(416, 616)
+
+[node name="Crate8" parent="." instance=ExtResource("1_w27tu")]
+position = Vector2(480, 616)
+
+[node name="Crate9" parent="." instance=ExtResource("1_w27tu")]
+position = Vector2(544, 616)
+
+[node name="Crate10" parent="." instance=ExtResource("1_w27tu")]
+position = Vector2(608, 616)
+
+[node name="Crate11" parent="." instance=ExtResource("1_w27tu")]
+position = Vector2(672, 616)
+
+[node name="Crate12" parent="." instance=ExtResource("1_w27tu")]
+position = Vector2(736, 616)
+
+[node name="Crate13" parent="." instance=ExtResource("1_w27tu")]
+position = Vector2(800, 616)
+
+[node name="Crate14" parent="." instance=ExtResource("1_w27tu")]
+position = Vector2(864, 616)
+
+[node name="Crate15" parent="." instance=ExtResource("1_w27tu")]
+position = Vector2(928, 616)
+
+[node name="Crate16" parent="." instance=ExtResource("1_w27tu")]
+position = Vector2(992, 616)
+
+[node name="Crate17" parent="." instance=ExtResource("1_w27tu")]
+position = Vector2(1056, 616)
+
+[node name="Crate18" parent="." instance=ExtResource("1_w27tu")]
+position = Vector2(1120, 616)
+
+[node name="Boundary1" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary1"]
+position = Vector2(-10, 324)
+shape = SubResource("RectangleShape2D_b5bcs")
+
+[node name="Boundary2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary2"]
+position = Vector2(1162, 324)
+shape = SubResource("RectangleShape2D_b5bcs")
+
+[node name="Player4" parent="." instance=ExtResource("2_a6wuc")]
+position = Vector2(118, 449)
+
+[node name="DissapearingPlatform" parent="." instance=ExtResource("4_b5bcs")]
+position = Vector2(338, 468)
+
+[node name="ShooterRobo" parent="." instance=ExtResource("5_5yy35")]
+position = Vector2(886, 523)
+
+[node name="Gun" parent="." instance=ExtResource("6_gp6e7")]
+position = Vector2(560, 469)
