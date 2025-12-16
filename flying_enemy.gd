@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-
 var speed = 100.0
 var facing_right = true
 
@@ -27,6 +26,7 @@ func die():
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if "Player" in body.name:
 		if body.can_attack:
+			body.play_kill_sound()
 			die()
 			body.disable_attack()
 		else:

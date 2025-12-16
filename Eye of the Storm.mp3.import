@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://mbngr2tncg24"
+path="res://.godot/imported/Eye of the Storm.mp3-b20161eb4c5692773f4a65fd1741d659.mp3str"
+
+[deps]
+
+source_file="res://Eye of the Storm.mp3"
+dest_files=["res://.godot/imported/Eye of the Storm.mp3-b20161eb4c5692773f4a65fd1741d659.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

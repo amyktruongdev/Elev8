@@ -4,6 +4,11 @@ const SPEED = 200.0
 const JUMP_VELOCITY = -550.0
 
 @onready var sprite_2d = $Sprite2D
+@onready var jump_sound = $AudioStreamPlayer
+@onready var kill_sound = $AudioStreamPlayer2
+@onready var item_get_sound = $AudioStreamPlayer3
+@onready var hit_sound = $AudioStreamPlayer4
+@onready var dash_sound = $AudioStreamPlayer5
 @onready var timer1: Timer = $DurationTimer
 @onready var timer2: Timer = $CooldownTimer
 @onready var iframetimer: Timer = $IFrameTimer
@@ -16,6 +21,12 @@ var health = 0
 var can_take_damage = true
 var is_invincible = false
 var can_attack = false
+
+func play_kill_sound():
+	kill_sound.play()
+
+func play_item_get_sound():
+	item_get_sound.play()
 
 func enable_attack():
 	can_attack = true
@@ -43,6 +54,7 @@ func damage_taken():
 		else:
 			can_take_damage = false
 			health -= 1
+			hit_sound.play()
 			sprite_2d.modulate = Color.RED
 			iframetimer.start()
 
@@ -59,11 +71,13 @@ func _physics_process(delta: float) -> void:
 
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_up") and is_on_floor():
+		jump_sound.play()
 		velocity.y = JUMP_VELOCITY
 	
 	if (Input.is_action_just_pressed("ui_accept") and can_dash):
 		is_dashing = true
 		can_dash = false
+		dash_sound.play()
 		timer1.start()
 		timer2.start()
 

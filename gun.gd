@@ -13,5 +13,6 @@ func _process(_delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if "Player" in body.name:
-		body.activate_dash()
+		body.play_item_get_sound()
+		body.become_invincible()
 		queue_free()

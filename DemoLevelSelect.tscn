@@ -112,13 +112,84 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Controls:
 Left Key => Move left
 Right Key => Move right
-Up Key => Jump
-For Demo 4, Space Key => Dash"
+Up Key => Jump"
 horizontal_alignment = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_1323m")
 autoplay = true
+
+[node name="ItemDescription1" type="Label" parent="."]
+layout_mode = 0
+offset_left = 198.0
+offset_top = 136.0
+offset_right = 417.0
+offset_bottom = 159.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Helmet: Allows one more hit"
+
+[node name="ItemDescription8" type="Label" parent="."]
+layout_mode = 0
+offset_left = 249.0
+offset_top = 233.0
+offset_right = 468.0
+offset_bottom = 256.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "*Default player"
+
+[node name="ItemDescription2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 213.0
+offset_top = 399.0
+offset_right = 432.0
+offset_bottom = 422.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Knife: Can kill one enemy"
+
+[node name="ItemDescription6" type="Label" parent="."]
+layout_mode = 0
+offset_left = 227.0
+offset_top = 500.0
+offset_right = 446.0
+offset_bottom = 523.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "*Faster move speed"
+
+[node name="ItemDescription3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 704.0
+offset_top = 399.0
+offset_right = 971.0
+offset_bottom = 422.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Gun: Become invincible for a while"
+
+[node name="ItemDescription7" type="Label" parent="."]
+layout_mode = 0
+offset_left = 766.0
+offset_top = 500.0
+offset_right = 1033.0
+offset_bottom = 523.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "*Higher jump height"
+
+[node name="ItemDescription4" type="Label" parent="."]
+layout_mode = 0
+offset_left = 727.0
+offset_top = 137.0
+offset_right = 963.0
+offset_bottom = 160.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Coin: Lets you dash with space"
+
+[node name="ItemDescription5" type="Label" parent="."]
+layout_mode = 0
+offset_left = 767.0
+offset_top = 233.0
+offset_right = 1003.0
+offset_bottom = 256.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "*Starts with extra hit"
 
 [connection signal="pressed" from="Demo1" to="." method="_on_demo_1_pressed"]
 [connection signal="pressed" from="Demo2" to="." method="_on_demo_2_pressed"]

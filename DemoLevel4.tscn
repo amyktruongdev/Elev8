@@ -1,11 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://d2xobe6wcdje2"]
+[gd_scene load_steps=10 format=3 uid="uid://d2xobe6wcdje2"]
 
 [ext_resource type="Texture2D" uid="uid://cnhqn8djsbem0" path="res://BG4.png" id="1_5yy35"]
 [ext_resource type="PackedScene" uid="uid://13a86er7njvw" path="res://Crate.tscn" id="1_w27tu"]
-[ext_resource type="PackedScene" uid="uid://dqokdkxe42rwj" path="res://Player4.tscn" id="2_a6wuc"]
 [ext_resource type="PackedScene" uid="uid://c46ahmjw2nkae" path="res://DissapearingPlatform.tscn" id="4_b5bcs"]
 [ext_resource type="PackedScene" uid="uid://caahfxmtlerwe" path="res://ShooterRobo.tscn" id="5_5yy35"]
+[ext_resource type="PackedScene" uid="uid://dkewu8khni4ci" path="res://Player3.tscn" id="6_cvcno"]
 [ext_resource type="PackedScene" uid="uid://cwu1lyo4hhs48" path="res://Gun.tscn" id="6_gp6e7"]
+[ext_resource type="PackedScene" uid="uid://bwgmu4o40k54e" path="res://EndGoal.tscn" id="7_cvcno"]
+[ext_resource type="AudioStream" uid="uid://mbngr2tncg24" path="res://Eye of the Storm.mp3" id="8_6r0f8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b5bcs"]
 size = Vector2(20, 648)
@@ -51,6 +53,21 @@ position = Vector2(608, 616)
 [node name="Crate11" parent="." instance=ExtResource("1_w27tu")]
 position = Vector2(672, 616)
 
+[node name="Crate19" parent="." instance=ExtResource("1_w27tu")]
+position = Vector2(403, 312)
+
+[node name="Crate20" parent="." instance=ExtResource("1_w27tu")]
+position = Vector2(467, 312)
+
+[node name="Crate21" parent="." instance=ExtResource("1_w27tu")]
+position = Vector2(531, 312)
+
+[node name="Crate22" parent="." instance=ExtResource("1_w27tu")]
+position = Vector2(595, 312)
+
+[node name="Crate23" parent="." instance=ExtResource("1_w27tu")]
+position = Vector2(659, 312)
+
 [node name="Crate12" parent="." instance=ExtResource("1_w27tu")]
 position = Vector2(736, 616)
 
@@ -72,6 +89,18 @@ position = Vector2(1056, 616)
 [node name="Crate18" parent="." instance=ExtResource("1_w27tu")]
 position = Vector2(1120, 616)
 
+[node name="Crate24" parent="." instance=ExtResource("1_w27tu")]
+position = Vector2(1056, 299)
+
+[node name="Crate25" parent="." instance=ExtResource("1_w27tu")]
+position = Vector2(1120, 299)
+
+[node name="Crate26" parent="." instance=ExtResource("1_w27tu")]
+position = Vector2(817, 447)
+
+[node name="Crate27" parent="." instance=ExtResource("1_w27tu")]
+position = Vector2(881, 447)
+
 [node name="Boundary1" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary1"]
@@ -84,14 +113,27 @@ shape = SubResource("RectangleShape2D_b5bcs")
 position = Vector2(1162, 324)
 shape = SubResource("RectangleShape2D_b5bcs")
 
-[node name="Player4" parent="." instance=ExtResource("2_a6wuc")]
-position = Vector2(118, 449)
-
 [node name="DissapearingPlatform" parent="." instance=ExtResource("4_b5bcs")]
-position = Vector2(338, 468)
+position = Vector2(202, 422)
+
+[node name="DissapearingPlatform2" parent="." instance=ExtResource("4_b5bcs")]
+position = Vector2(833, 167)
+
+[node name="Player3" parent="." instance=ExtResource("6_cvcno")]
+position = Vector2(90, 508)
 
 [node name="ShooterRobo" parent="." instance=ExtResource("5_5yy35")]
-position = Vector2(886, 523)
+position = Vector2(1088, 552)
+
+[node name="ShooterRobo2" parent="." instance=ExtResource("5_5yy35")]
+position = Vector2(1088, 235)
 
 [node name="Gun" parent="." instance=ExtResource("6_gp6e7")]
-position = Vector2(560, 469)
+position = Vector2(549, 196)
+
+[node name="EndGoal" parent="." instance=ExtResource("7_cvcno")]
+position = Vector2(1084, 73)
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_6r0f8")
+autoplay = true

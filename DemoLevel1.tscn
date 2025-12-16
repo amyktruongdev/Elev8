@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cxcvyqjm3dea2"]
+[gd_scene load_steps=9 format=3 uid="uid://cxcvyqjm3dea2"]
 
 [ext_resource type="PackedScene" uid="uid://bjb0cjtep4sye" path="res://Tile.tscn" id="1_5xdl2"]
 [ext_resource type="Texture2D" uid="uid://dlq8ii6ibcga1" path="res://BG1.png" id="1_cns1f"]
@@ -6,7 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://csqw3v78invlh" path="res://HMovingPlatform.tscn" id="3_qttey"]
 [ext_resource type="PackedScene" uid="uid://rhw5j7sgjacw" path="res://Spider.tscn" id="5_0xdjd"]
 [ext_resource type="PackedScene" uid="uid://bwgmu4o40k54e" path="res://EndGoal.tscn" id="5_cns1f"]
-[ext_resource type="PackedScene" uid="uid://cj7ttg8snxo8a" path="res://Coin.tscn" id="7_5w2dp"]
+[ext_resource type="PackedScene" uid="uid://cbed20t05eodk" path="res://Helmet.tscn" id="7_5w2dp"]
+[ext_resource type="AudioStream" uid="uid://droyv0qyabql2" path="res://one_0.mp3" id="8_wvqaw"]
 
 [node name="DemoLevel1" type="Node2D"]
 
@@ -217,5 +218,9 @@ position = Vector2(546, 365)
 [node name="Spider2" parent="." instance=ExtResource("5_0xdjd")]
 position = Vector2(772, 574)
 
-[node name="Coin" parent="." instance=ExtResource("7_5w2dp")]
-position = Vector2(739, 500)
+[node name="Helmet" parent="." instance=ExtResource("7_5w2dp")]
+position = Vector2(928, 407)
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_wvqaw")
+autoplay = true

@@ -1,12 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://b7wbfc82suk5m"]
+[gd_scene load_steps=9 format=3 uid="uid://b7wbfc82suk5m"]
 
 [ext_resource type="Texture2D" uid="uid://c748143d8pc8v" path="res://BG2.png" id="1_ar0nf"]
 [ext_resource type="PackedScene" uid="uid://df6ms0l3fnfc6" path="res://WaterTile.tscn" id="1_wg7jh"]
 [ext_resource type="PackedScene" uid="uid://c6p36ylisk6le" path="res://VMovingPlatform.tscn" id="3_ux4do"]
 [ext_resource type="PackedScene" uid="uid://ctubvswvjb0oy" path="res://Robo.tscn" id="4_44nk5"]
 [ext_resource type="PackedScene" uid="uid://bwgmu4o40k54e" path="res://EndGoal.tscn" id="5_sn4bo"]
-[ext_resource type="PackedScene" uid="uid://dkewu8khni4ci" path="res://Player3.tscn" id="6_ar0nf"]
-[ext_resource type="PackedScene" uid="uid://cbed20t05eodk" path="res://Helmet.tscn" id="7_54o7s"]
+[ext_resource type="PackedScene" uid="uid://dqokdkxe42rwj" path="res://Player4.tscn" id="6_54o7s"]
+[ext_resource type="PackedScene" uid="uid://cj7ttg8snxo8a" path="res://Coin.tscn" id="7_1cva0"]
+[ext_resource type="AudioStream" uid="uid://5jwjhtl8itb2" path="res://Piano Loop.wav" id="8_1cva0"]
 
 [node name="DemoLevel2" type="Node2D"]
 
@@ -169,8 +170,12 @@ position = Vector2(551, 361)
 [node name="EndGoal" parent="." instance=ExtResource("5_sn4bo")]
 position = Vector2(101, 101)
 
-[node name="Player3" parent="." instance=ExtResource("6_ar0nf")]
-position = Vector2(202, 507)
+[node name="Player4" parent="." instance=ExtResource("6_54o7s")]
+position = Vector2(135, 549)
 
-[node name="Helmet" parent="." instance=ExtResource("7_54o7s")]
-position = Vector2(845, 524)
+[node name="Coin" parent="." instance=ExtResource("7_1cva0")]
+position = Vector2(857, 524)
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_1cva0")
+autoplay = true

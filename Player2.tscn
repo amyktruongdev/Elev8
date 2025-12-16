@@ -1,7 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://b5mf2ju6kp7q6"]
+[gd_scene load_steps=9 format=3 uid="uid://b5mf2ju6kp7q6"]
 
 [ext_resource type="Texture2D" uid="uid://pqp4bymm4g3s" path="res://Strawberry.png" id="1_a06vx"]
 [ext_resource type="Script" uid="uid://d1c7ndx3gooyd" path="res://player_2.gd" id="1_mjxxk"]
+[ext_resource type="AudioStream" uid="uid://cxy6ai7ylau3q" path="res://jump.wav" id="3_eyttc"]
+[ext_resource type="AudioStream" uid="uid://ctyqx2ujx08re" path="res://explosion.wav" id="4_6qrfi"]
+[ext_resource type="AudioStream" uid="uid://bxbaqxwy3f4o2" path="res://powerUp.wav" id="5_qgh46"]
+[ext_resource type="AudioStream" uid="uid://14edxjn6s7e6" path="res://hurt.wav" id="6_qgh46"]
+[ext_resource type="AudioStream" uid="uid://dvqkidrach48d" path="res://dash.wav" id="7_c7vm2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mjxxk"]
 size = Vector2(52, 93)
@@ -32,6 +37,21 @@ one_shot = true
 
 [node name="CooldownTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_eyttc")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_6qrfi")
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_qgh46")
+
+[node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_qgh46")
+
+[node name="AudioStreamPlayer5" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_c7vm2")
 
 [connection signal="timeout" from="IFrameTimer" to="." method="_on_i_frame_timer_timeout"]
 [connection signal="timeout" from="InvincibleTimer" to="." method="_on_invincible_timer_timeout"]

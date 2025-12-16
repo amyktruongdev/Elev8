@@ -4,18 +4,18 @@
 [ext_resource type="Script" uid="uid://bd03n8rf8vtrj" path="res://knife.gd" id="1_wpotk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wpotk"]
-size = Vector2(59, 86)
+size = Vector2(52, 71)
 
 [node name="Knife" type="Area2D"]
 script = ExtResource("1_wpotk")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-12.75, 15.75)
-scale = Vector2(0.796, 0.748)
+position = Vector2(-18.75, 23.75)
+scale = Vector2(0.7, 0.62)
 texture = ExtResource("1_kf3d6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-24.5, 12)
+position = Vector2(-29, 20.5)
 shape = SubResource("RectangleShape2D_wpotk")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
