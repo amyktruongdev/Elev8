@@ -1,20 +1,50 @@
-[gd_scene load_steps=2 format=3 uid="uid://b50x5s6kbu8k5"]
+[gd_scene load_steps=6 format=3 uid="uid://dnv1o3cnjcnh7"]
 
 [ext_resource type="Script" uid="uid://g62qjreyysq7" path="res://LevelSelect.gd" id="1_vwle4"]
+[ext_resource type="Texture2D" uid="uid://b473d8p2jud13" path="res://BgImages/Sky.png" id="2_n3jan"]
+[ext_resource type="Texture2D" uid="uid://u10ci2hsmap4" path="res://BgImages/background under levels.png" id="3_id2w8"]
+[ext_resource type="Texture2D" uid="uid://ch5v15j4b573b" path="res://root_guy.png" id="3_xohnu"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xohnu"]
+texture = ExtResource("2_n3jan")
 
 [node name="LevelSelector" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -15.0
+offset_top = -28.0
+offset_right = -15.0
+offset_bottom = -28.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vwle4")
 
+[node name="Sky" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = 28.0
+offset_right = 12.0
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_xohnu")
+
+[node name="BackgroundUnderLevels" type="Sprite2D" parent="."]
+position = Vector2(671.3123, 386.49994)
+scale = Vector2(0.1500439, 0.13880526)
+texture = ExtResource("3_id2w8")
+
 [node name="MainVBox" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 184.0
+offset_top = 136.0
+offset_right = 949.0
+offset_bottom = 633.0
 
 [node name="Title" type="Label" parent="MainVBox"]
 layout_mode = 2
@@ -27,3 +57,8 @@ columns = 3
 layout_mode = 2
 text = "Back to Menu
 "
+
+[node name="RootGuy" type="Sprite2D" parent="."]
+position = Vector2(1210, 110.5)
+scale = Vector2(1.375, 1.4270834)
+texture = ExtResource("3_xohnu")

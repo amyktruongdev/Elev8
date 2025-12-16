@@ -1,6 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://cwb7cn0jkgsg6"]
+[gd_scene load_steps=14 format=3 uid="uid://bbqx6246oiiif"]
 
-[ext_resource type="Script" uid="uid://c215g1f0bitog" path="res://level_editor_ui.gd" id="1_0fbet"]
+[ext_resource type="Script" path="res://level_editor_ui.gd" id="1_0fbet"]
 [ext_resource type="Texture2D" uid="uid://bbub0shsuundb" path="res://sprites/upload.png" id="2_qtu10"]
 [ext_resource type="Texture2D" uid="uid://1h8rwbtku2y1" path="res://image.png" id="3_fj5cn"]
 [ext_resource type="Texture2D" uid="uid://dxmsk6vqre2vk" path="res://uploadd.png" id="4_iy58a"]
@@ -227,7 +227,7 @@ flat = true
 layout_mode = 2
 theme_override_colors/font_color = Color(0.0056611756, 0.0056611407, 0.005661149, 1)
 theme_override_font_sizes/font_size = 23
-text = "Load Test"
+text = "Load"
 flat = true
 
 [node name="try it" type="Button" parent="mainVbox/bottombar/bottomhbox"]
