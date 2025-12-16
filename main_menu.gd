@@ -7,7 +7,7 @@ func _ready() -> void:
 	load_button.pressed.connect(_on_load_pressed)
 
 func _on_demo_pressed() -> void:
-	get_tree().change_scene_to_file("res://DemoLevel1.tscn")
+	get_tree().change_scene_to_file("res://DemoLevelSelect.tscn")
 
 func _on_load_pressed() -> void:
 	print("🎮 Opening Level Selector...")
